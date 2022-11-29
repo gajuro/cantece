@@ -1,0 +1,669 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cantece inmormantare</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="713863b2-31e5-467f-9cc7-a500d2d45d81" class="page sans"><header><h1 class="page-title">Cantece inmormantare</h1></header><div class="page-body"><h1 id="5344a305-5584-40dd-87f4-def3394765be" class=""><details open=""><summary>PDC</summary></details></h1><div class="indented"><h2 id="fee8408f-3c93-4cff-9f01-b64f1c837f8d" class="">Incurajare</h2><p id="e57f0074-8c92-4570-96d8-ec48497000cc" class="">100. Prin Duhul Sfant</p><p id="57cb3a03-468a-4d24-b8c2-ef04b4e2f048" class="">154. Vreau lângă Dumnezeu (Fa)</p><p id="e3495291-ea2c-4f2c-b1c3-9fafcd2d45f4" class="">171. Ferice omul credincios</p><p id="d6f78929-b956-499d-ad29-1953ec4c1d9a" class="">194. In curand vom fi in stare</p><p id="b0038aaa-8721-4f4c-bae7-f586ca2d3bb4" class="">406. Ne vom revedea odata</p><p id="5fd391ce-7b54-4a75-9aa0-e4f1aaee2901" class="">85. Rau de apa revarsata</p><p id="84786fb4-5c62-419c-910b-6d8620031d9d" class="">49. Mai mult sa te iubesc</p><ol type="1" id="0f4dd6c3-66d9-4a68-9df4-0e38988b5516" class="numbered-list" start="424"><li> Isuse dintre toti Te-aleg</li></ol><h2 id="5c97018f-2296-4f17-909f-12523efbdce2" class="">Chemare</h2><p id="231a2cc4-cdb8-4017-a9b9-939a67d1ce34" class="">84. In nemarginita-Ti mila</p><ol type="1" id="120a21fe-ee4c-4201-81f0-9f9596de327d" class="numbered-list" start="381"><li>O ce har e sa te-ncrezi</li></ol><p id="5231abc5-9904-499c-869b-7da0340cd893" class="">77. Ah, cine poate sa te indrume</p><ol type="1" id="e359e5c0-db43-4772-a47e-ffc8753c1629" class="numbered-list" start="65"><li>Isus o usa ne-a deschis</li></ol><p id="6dd6539c-b66c-43ba-a5b2-103e3558c1bc" class="">207. Mantuire ni s-a dat</p><ol type="1" id="5e7454a4-c413-4bfe-ba5d-680594f840c9" class="numbered-list" start="51"><li>Primiti cu totii azi in dar</li></ol><p id="9662cf2f-08f2-4d1c-873d-dff7e7b5dbd0" class="">233. Stai pe loc, stai te opreste</p><ol type="1" id="0b52bbf9-c807-46c1-8a63-9b1f20faf962" class="numbered-list" start="86"><li>Vrei tu sa scapi</li></ol></div><h1 id="e23edfc0-7b4b-4596-a8f7-2b9f501c9645" class=""><details open=""><summary>Tineri</summary></details></h1><div class="indented"><figure id="a1918385-dc2a-43a4-972a-b67337e4a7b8" class="link-to-page"><a href="Ca%CC%82nd%20t%CC%A6i-e%20sufletul%20cufundat%20i%CC%82n%20neguri%20(do)%20a1918385dc2a43a4972ab67337e4a7b8.html">Când ți-e sufletul cufundat în neguri (do)</a></figure><figure id="7e018a92-64d5-49c3-8f0d-9547bc082e5c" class="link-to-page"><a href="Cum%20pot%20ra%CC%86spla%CC%86ti%20eu%20iubirea-T%CC%A7i%20imensa%CC%86%20(Fa)%207e018a9264d549c38f0d9547bc082e5c.html">Cum pot răsplăti eu iubirea-Ţi imensă (Fa)</a></figure><figure id="8a79172b-8a39-4bcc-88f8-429c5f91d448" class="link-to-page"><a href="Doar%20o%20coliba%CC%86%20aici%20jos%20i%CC%82mi%20ajunge%20(Do)%208a79172b8a394bcc88f8429c5f91d448.html">Doar o colibă aici jos îmi ajunge (Do)</a></figure><figure id="1250805e-b580-4196-88cd-9ec996b55e27" class="link-to-page"><a href="Domnul%20pa%CC%86cii%20sa%CC%86%20fie%20cu%20tine%20(Fa)%201250805eb580419688cd9ec996b55e27.html">Domnul păcii să fie cu tine (Fa)</a></figure><figure id="f0c86570-9544-40c1-aac3-20165e54e1c0" class="link-to-page"><a href="Dumnezeul%20puternic%20(Sib)%20f0c86570954440c1aac320165e54e1c0.html">Dumnezeul puternic (Sib)</a></figure><figure id="5db6c071-cebe-4b0c-bf59-0fe6090b3114" class="link-to-page"><a href="El%20ne-a%20iubit,%20venind%20i%CC%82n%20lume%20(Sol)%205db6c071cebe4b0cbf590fe6090b3114.html">El ne-a iubit, venind în lume (Sol)</a></figure><figure id="881c73b8-3c9c-41b3-a3f7-8b4a05272e8f" class="link-to-page"><a href="Eu%20sunt%20un%20om,%20sunt%20doar%20un%20om%20(Do)%20881c73b83c9c41b3a3f78b4a05272e8f.html">Eu sunt un om, sunt doar un om (Do)</a></figure><figure id="d7ad36cb-212b-4518-a0d6-37900f393ca2" class="link-to-page"><a href="I%CC%82n%20cetate%20unde%20merg%20eu%20(Mi)%20d7ad36cb212b4518a0d637900f393ca2.html">În cetate unde merg eu (Mi)</a></figure><figure id="691dc2cb-1214-4fb3-a7a5-aab776f05e9b" class="link-to-page"><a href="La%20crucea%20de%20la%20Golgota%20(Fa)%20691dc2cb12144fb3a7a5aab776f05e9b.html">La crucea de la Golgota (Fa)</a></figure><figure id="45859116-f931-417f-988f-f0eff9457625" class="link-to-page"><a href="Ma%CC%86-ncred%20i%CC%82n%20El%20orice%20s-ar%20i%CC%82nta%CC%82mpla%20(La)%2045859116f931417f988ff0eff9457625.html">Mă-ncred în El orice s-ar întâmpla (La)</a></figure><figure id="46d55e19-fef1-41b0-983e-39134ab261da" class="link-to-page"><a href="Ma%CC%86ret%CC%A6ul%20har%20m%C2%ADa%20ma%CC%82ntuit%20(Fa)%2046d55e19fef141b0983e39134ab261da.html">Mărețul har m­a mântuit (Fa)</a></figure><figure id="c7c05cf2-89a0-4040-b332-4eea7365cbf9" class="link-to-page"><a href="Mult%CC%A6umim,%20o%20Tata%CC%86l%20nostru%20(La)%20c7c05cf289a04040b3324eea7365cbf9.html">Mulțumim, o Tatăl nostru (La)</a></figure><figure id="a5536c09-9287-4f36-9c8e-01203a952e64" class="link-to-page"><a href="Nu%20este%20munte%20prea-nalt%20(Sol)%20a5536c0992874f369c8e01203a952e64.html">Nu este munte prea-nalt (Sol)</a></figure><figure id="4d87a287-df0f-448c-a83c-6eb5eb5a20b8" class="link-to-page"><a href="Nu%20te-ndoi,%20ci%20crede%20ca%CC%86%20dincolo%20de%20nor%20(Sol)%204d87a287df0f448ca83c6eb5eb5a20b8.html">Nu te-ndoi, ci crede că dincolo de nor (Sol)</a></figure><figure id="7286fb1b-54b7-4144-873c-dcbee17064ca" class="link-to-page"><a href="Pe%20acest%20pa%CC%86ma%CC%82nt,%20totul%20Isuse%20(Do)%207286fb1b54b74144873cdcbee17064ca.html">Pe acest pământ, totul Isuse (Do)</a></figure><figure id="04956048-1341-41cf-9db0-e1c5c6915f7c" class="link-to-page"><a href="Pe%20oceanul%20infinit%20cu%20valuri%20(Fa)%2004956048134141cf9db0e1c5c6915f7c.html">Pe oceanul infinit cu valuri (Fa)</a></figure><figure id="75079b35-106b-40b9-a33b-e8c26ed990ac" class="link-to-page"><a href="Pentru%20tine-un%20pa%CC%86ca%CC%86tos%20(la)%2075079b35106b40b9a33be8c26ed990ac.html">Pentru tine-un păcătos (la)</a></figure><figure id="b26325d2-cfac-4c4b-b603-ea5070a79ad4" class="link-to-page"><a href="Poate-t%CC%A6i%20este%20greu%20sa%CC%86%20crezi%20(Sib)%20b26325d2cfac4c4bb603ea5070a79ad4.html">Poate-ți este greu să crezi (Sib)</a></figure><figure id="5dc0d3ab-b2a9-4e35-8a7a-fe2bdc1f8866" class="link-to-page"><a href="Sunt%20un%20stra%CC%86in%20fa%CC%86ra%CC%86%20de%20t%CC%A7ara%CC%86%20(si)%205dc0d3abb2a94e358a7afe2bdc1f8866.html">Sunt un străin fără de ţară (si)</a></figure><figure id="8fedd8f9-5ab8-4316-9ad5-ff174af624ca" class="link-to-page"><a href="Sunt%20stra%CC%86jerul%20care%20striga%CC%86%20(Do)%208fedd8f95ab843169ad5ff174af624ca.html">Sunt străjerul care strigă (Do)</a></figure><figure id="7ea955a0-bf00-4371-8821-40fe571c96d4" class="link-to-page"><a href="Tu%20m-ai%20fa%CC%86cut%20din%20t%CC%A6a%CC%86ra%CC%82na%CC%86%20(Re)%207ea955a0bf004371882140fe571c96d4.html">Tu m-ai făcut din țărână (Re)</a></figure><figure id="ff55deb0-e579-43fc-9074-5f7a7f77585f" class="link-to-page"><a href="Tu%20nu%20pleci%20niciodata%CC%86%20de%20la%20mine%20(Mi)%20ff55deb0e57943fc90745f7a7f77585f.html">Tu nu pleci niciodată de la mine (Mi)</a></figure><figure id="a0c1f1cd-f511-400f-ba08-5f92233e59ab" class="link-to-page"><a href="Vocea%20Lui%20se%20aude%20(Mi)%20a0c1f1cdf511400fba085f92233e59ab.html">Vocea Lui se aude (Mi)</a></figure></div></div></article></body></html>
